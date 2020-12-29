@@ -29,6 +29,12 @@ public class Test {
 
         System.out.println("读锁测试：");
         ExecutorService executorService = Executors.newFixedThreadPool(5);
+
+        ExecutorService executorService4 = Executors.newSingleThreadExecutor();
+        ExecutorService executorService5 = Executors.newCachedThreadPool();
+        ExecutorService executorService6 = Executors.newScheduledThreadPool(5);
+        ExecutorService executorService7 = Executors.newWorkStealingPool(5);
+
         for (int i = 0; i < 10; i++) {
             executorService.submit(() -> {
                 try {
