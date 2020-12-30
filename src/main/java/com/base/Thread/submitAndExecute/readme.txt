@@ -1,0 +1,10 @@
+ExecutorService中submit和execute的区别有三点：
+1、接收的参数不同
+
+2、submit有返回bai值，而execute没有
+用到返回值的例子，比如说应用中有很多个做validation的task，用户希望所有的task执行完，
+然后每个task告诉主程序执行结果，是成功还是失败，如果是失败，原因是什么。然后就可以把所有失败的原因综合起来发给调用者。
+
+3、submit方便Exception处理，而execute处理异常比较麻烦。
+在task里会抛出checked或者unchecked exception，而用户又希望外面的调用者能够感知这些exception并做出及时的处理，
+那么就需要用到submit，通过捕获Future.get抛出的异常。
