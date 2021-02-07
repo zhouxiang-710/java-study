@@ -7,16 +7,18 @@ package InterviewFromXiongJG.test1;
  * @ Modified By：
  * @Version: $version$
  */
-class B extends A{
- public B(int i){
-     System.out.println("b");
-  }
-    public B (){
+class B extends A {
+    public B(int i) {
+        System.out.println("b");
+    }
+
+    public B() {
         System.out.println("B");
     }
-  public static void main(String[] args) {
-    B b=new B (5);
-  }
+
+    public static void main(String[] args) {
+        B b = new B(5);
+    }
 }
 
 

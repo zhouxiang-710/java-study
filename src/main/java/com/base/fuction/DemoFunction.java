@@ -88,7 +88,7 @@ public class DemoFunction {
 
     /**
      * @param num1
-     * @param nuum2
+     * @param num2
      * @param biFunction
      * @return
      * @desc 使用BiFunction

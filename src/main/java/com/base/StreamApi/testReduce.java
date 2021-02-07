@@ -1,5 +1,6 @@
 package com.base.StreamApi;
 
+import com.base.Vo.GradeVo;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -42,10 +43,21 @@ public class testReduce {
 
         stream = Arrays.stream(new Integer[]{1, 2, 3, 4, 5, 6, 7});
 
-        //求逻辑求乘机
+        //求逻辑求乘积
         int result2 = stream.filter(i -> i % 2 == 0).reduce(1, (i, j) -> i * j);
 
         Optional.of(result2).ifPresent(System.out::println);
+
+
+        GradeVo gradeVo = new GradeVo();
+        Integer gradeId = 132;
+        //Optional.of(gradeId).ifPresent(gradeVo::setGradeId);
+        Optional.of(gradeId).ifPresent(a->{
+            gradeVo.setGradeId(gradeId);
+        });
+
+        System.out.println(gradeVo);
+
     }
 
 }
