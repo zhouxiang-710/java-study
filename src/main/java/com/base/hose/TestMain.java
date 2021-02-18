@@ -13,7 +13,7 @@ public class TestMain {
         ls.add(bean2);
         ls.add(bean3);
 
-        DataObject.makeTree(ls,"", (p,children)->TestListVo.of(p,children));
+        //DataObject.makeTree(ls,"", (p,children)->TestListVo.of(p,children));
 
     }
 }

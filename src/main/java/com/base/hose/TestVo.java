@@ -1,6 +1,6 @@
 package com.base.hose;
 
-public class TestVo extends DataObject.HierarchyLike {
+public class TestVo implements DataObject.HierarchyLike {
     private Integer id;
     private String parentId;
     private String name;
