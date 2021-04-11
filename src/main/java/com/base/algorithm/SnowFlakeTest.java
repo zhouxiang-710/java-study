@@ -1,5 +1,7 @@
 package com.base.algorithm;
 
+import java.util.concurrent.locks.ReentrantLock;
+
 /**
  * @ Author     ：zhouxiang.
  * @ Date       ：Created in 11:37 2020/8/20
@@ -146,7 +148,8 @@ public class SnowFlakeTest {
  class code{
 
      public static void main(String[] args) {
-
+//         ReentrantLock reentrantLock = new ReentrantLock();
+//         reentrantLock.newCondition();
          long workerIdBits = 6L;
 
          long maxWorkerId = -1L ^ (-1L << workerIdBits);
