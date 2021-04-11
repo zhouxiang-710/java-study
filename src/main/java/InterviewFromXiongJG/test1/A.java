@@ -14,7 +14,8 @@ class A {
     }
 
     private Integer a;
-  public A(){
-      System.out.println("A");
+
+    public A() {
+        System.out.println("A");
     }
 }

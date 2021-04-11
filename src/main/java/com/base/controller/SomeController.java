@@ -1,6 +1,6 @@
 package com.base.controller;
 
-import com.base.Vo.GardeVo;
+import com.base.Vo.GradeVo;
 import org.junit.Test;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,10 +18,10 @@ public class SomeController {
 
     @Test
     public  void test2() {
-        List<GardeVo> scoreAnalysis = new ArrayList<>();
-        GardeVo gardeVo = new GardeVo();
-        gardeVo.setGradeId(11);
-        scoreAnalysis.add(gardeVo);
+        List<GradeVo> scoreAnalysis = new ArrayList<>();
+        GradeVo gradeVo = new GradeVo();
+        gradeVo.setGradeId(11);
+        scoreAnalysis.add(gradeVo);
         System.out.println(scoreAnalysis);
     }
     @Test

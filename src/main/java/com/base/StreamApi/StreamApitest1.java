@@ -1,6 +1,6 @@
 package com.base.StreamApi;
 
-import com.base.Vo.GardeVo;
+import com.base.Vo.GradeVo;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -25,35 +25,35 @@ public class StreamApitest1 {
     @Test
     public void test(){
         list=new ArrayList<>();
-        String s = list.stream().map(GardeVo::getStudentName).collect(toList()).toString();
+        String s = list.stream().map(GradeVo::getStudentName).collect(toList()).toString();
         System.out.println("这个是"+s.substring(1,s.length()-1));
         System.out.println("a"+Runtime.getRuntime().availableProcessors());
     }
 
 
-    public static List<GardeVo> list=new ArrayList<>();
+    public static List<GradeVo> list=new ArrayList<>();
      //向list中塞值
-    {   GardeVo gardeVo = new GardeVo();
-        gardeVo.setGradeId(11);
-        gardeVo.setStudentName("张三");
+    {   GradeVo gradeVo = new GradeVo();
+        gradeVo.setGradeId(11);
+        gradeVo.setStudentName("张三");
 
-        GardeVo gardeVo1 = new GardeVo();
-        gardeVo1.setGradeId(12);
-        gardeVo1.setStudentName("李四");
+        GradeVo gradeVo1 = new GradeVo();
+        gradeVo1.setGradeId(12);
+        gradeVo1.setStudentName("李四");
 
-        GardeVo gardeVo2 = new GardeVo();
-        gardeVo2.setGradeId(13);
-        gardeVo2.setStudentName("王五");
+        GradeVo gradeVo2 = new GradeVo();
+        gradeVo2.setGradeId(13);
+        gradeVo2.setStudentName("王五");
 
-        GardeVo gardeVo3 = new GardeVo();
-        gardeVo3.setGradeId(13);
-        gardeVo3.setStudentName("赵柳");
+        GradeVo gradeVo3 = new GradeVo();
+        gradeVo3.setGradeId(13);
+        gradeVo3.setStudentName("赵柳");
 
         list =new ArrayList<>();
-        list.add(gardeVo);
-        list.add(gardeVo1);
-        list.add(gardeVo2);
-        list.add(gardeVo3);
+        list.add(gradeVo);
+        list.add(gradeVo1);
+        list.add(gradeVo2);
+        list.add(gradeVo3);
         System.out.println("原list——>"+list);
     }
     /*TOdo 获取流
@@ -63,8 +63,8 @@ public class StreamApitest1 {
 
         //todo 集合
         // 这种数据源较为常用，通过stream()方法即可获取流对象：
-        List<GardeVo> list = new ArrayList<GardeVo>();
-        Stream<GardeVo> stream = list.stream();
+        List<GradeVo> list = new ArrayList<GradeVo>();
+        Stream<GradeVo> stream = list.stream();
 
         //todo 数组
         //通过Arrays类提供的静态函数stream()获取数组的流对象：
@@ -94,8 +94,8 @@ public class StreamApitest1 {
     @Test
     public void filterTest(){
         //筛选filter
-        List<GardeVo> result = list.stream()
-                .filter(GardeVo::isHighGrade)
+        List<GradeVo> result = list.stream()
+                .filter(GradeVo::isHighGrade)
                 .collect(toList());
         System.out.println("筛选filter->"+result);
 
@@ -106,7 +106,7 @@ public class StreamApitest1 {
     @Test
     public void distinct(){
         //去重distinct
-        List<GardeVo> collect = list.stream().distinct().collect(toList());
+        List<GradeVo> collect = list.stream().distinct().collect(toList());
 
         list.stream().distinct().collect(toList()).forEach(s->{
             System.out.println(s.toString());
@@ -135,8 +135,8 @@ public class StreamApitest1 {
      */
     @Test
     public void map(){
-        List<String> collect = list.stream().map(GardeVo::getStudentName).collect(toList());
-        List<Integer> collect1 = list.stream().map(GardeVo::getGradeId).collect(toList());
+        List<String> collect = list.stream().map(GradeVo::getStudentName).collect(toList());
+        List<Integer> collect1 = list.stream().map(GradeVo::getGradeId).collect(toList());
         collect1.forEach(System.out::println);
     }
 
@@ -169,7 +169,7 @@ public class StreamApitest1 {
     
      */
     public void anyMatch(){
-        boolean b = list.stream().anyMatch(GardeVo::isHighGrade);
+        boolean b = list.stream().anyMatch(GradeVo::isHighGrade);
         boolean b1 = list.stream().anyMatch(s -> {
             if (s.getGradeId() > 50) {
                 return true;
@@ -185,7 +185,7 @@ public class StreamApitest1 {
      */
     @Test
     public void allMatch(){
-        boolean b = list.stream().allMatch(GardeVo::isHighGrade);
+        boolean b = list.stream().allMatch(GradeVo::isHighGrade);
         System.out.println(b);
     }
 }

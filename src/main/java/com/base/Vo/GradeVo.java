@@ -11,7 +11,7 @@ import lombok.Data;
  * @Version: $version$
  */
 @Data
-public class GardeVo {
+public class GradeVo {
     private String studentNumber;
 
     private String studentName;
