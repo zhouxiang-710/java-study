@@ -5,6 +5,13 @@ import sun.misc.BASE64Encoder;
 
 import java.io.*;
 
+/*
+ * 功能描述: <br>
+ * @Param: base 64 和 pdf的互转
+ * @Return:
+ * @Author: zhouxiang
+ * @Date: 2021/4/20 16:51
+ */
 public class base64ToPdf {
 
     public static void main(String[] args) {
