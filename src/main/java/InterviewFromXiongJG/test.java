@@ -33,11 +33,6 @@ public class test {
         collect.forEach((k,v)->{
             System.out.println("k="+k+",v="+v);
         });
-
-
-
-        //----------------
-        System.out.println("5" + 2);
     }
 
 }
