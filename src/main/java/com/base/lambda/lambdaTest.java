@@ -1,15 +1,10 @@
 package com.base.lambda;
 
 import org.junit.Test;
+import org.springframework.beans.factory.parsing.SourceExtractor;
 
-import java.util.Comparator;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.function.DoubleBinaryOperator;
-import java.util.function.IntFunction;
-import java.util.function.ToIntBiFunction;
-import java.util.function.ToIntFunction;
+import java.util.*;
+import java.util.function.*;
 
 /**
  * @author zhou xiang
@@ -17,7 +12,14 @@ import java.util.function.ToIntFunction;
  **/
 public class lambdaTest {
     @Test
-    public void test(){
+    public void test() {
+        BiFunction<Integer, Integer,String> biFunction = (x, y) -> {
+            if (Objects.equals(x,y)) {
+                return "equal";
+            }
+            return "";
+        };
+        biFunction.apply(6,6);
         Comparator<Integer> com = (x, y) -> {
             System.out.println("函数式接口");
             return Integer.compare(x, y);
@@ -26,27 +28,28 @@ public class lambdaTest {
 
         ToIntBiFunction toInt = (x, y) -> {
             System.out.println("函数式接口");
-            int compare = Integer.compare((int)x,(int) y);
+            int compare = Integer.compare((int) x, (int) y);
             return compare;
         };
-        System.out.println(com.compare(5,6));
-        System.out.println(toInt.applyAsInt(5,6));
+        System.out.println(com.compare(5, 6));
+        System.out.println(toInt.applyAsInt(5, 6));
 
         ToIntFunction<String> sToInt =
-         (x)->{
-            return Integer.valueOf(x);
-        };
+                (x) -> {
+                    return Integer.valueOf(x);
+                };
         System.out.println(sToInt.applyAsInt("6"));
 
         // 指定要创建的数组类型
-      //  IntFunction<Integer[]> intFunction = Integer[]::new;
+        //  IntFunction<Integer[]> intFunction = Integer[]::new;
         IntFunction<Integer[]> intFunction = Integer[]::new;
-         // 创建一个指定长度的数组
+        // 创建一个指定长度的数组
         Integer[] dates = intFunction.apply(10);
-        System.out.println(dates.toString() +": length:"+dates.length);
+        System.out.println(dates.toString() + ": length:" + dates.length);
 
 
-        IntFunction<String> getMonthName = monthNo -> {
+
+        IntFunction<String> getMonthName = (monthNo) -> {
             Map<Integer, String> months = new HashMap<>();
             months.put(1, "January");
             months.put(2, "February");
@@ -60,7 +63,7 @@ public class lambdaTest {
             months.put(10, "October");
             months.put(11, "November");
             months.put(12, "December");
-            if(months.get(monthNo)!= null) {
+            if (months.get(monthNo) != null) {
                 return months.get(monthNo);
             } else {
                 return "The number must between 1 to 12";
@@ -68,11 +71,11 @@ public class lambdaTest {
         };
         int input = 1;
         String month = getMonthName.apply(input);
-        System.out.println("Month number "+ input +" is: "+ month);
+        System.out.println("Month number " + input + " is: " + month);
         input = 10;
-        System.out.println("Month number "+ input +" is: "+ getMonthName.apply(input));
+        System.out.println("Month number " + input + " is: " + getMonthName.apply(input));
         input = 15;
-        System.out.println("Month number "+ input +" is: "+ getMonthName.apply(input));
+        System.out.println("Month number " + input + " is: " + getMonthName.apply(input));
     }
 
 }
