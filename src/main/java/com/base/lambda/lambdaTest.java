@@ -23,6 +23,9 @@ public class lambdaTest {
         Comparator<Integer> com = (x, y) -> {
             System.out.println("函数式接口");
             return Integer.compare(x, y);
+
+
+
         };
 
 
