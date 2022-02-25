@@ -1,4 +1,4 @@
-package com.base.fuction;
+package com.base.lambda.fuction;
 
 import java.util.function.BiFunction;
 import java.util.function.Function;
